@@ -1,9 +1,11 @@
 import "./App.css";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="font-familY mx-auto h-full bg-green-400 text-5xl ">
-      
+    <div className="relative h-screen">
+      <div className="bg-img" />
+       <Home />
     </div>
   );
 }

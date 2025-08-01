@@ -1,11 +1,38 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 @theme {
   --color-green-400: hsl(180, 29%, 50%);
   --color-green-50: hsl(180, 52%, 96%);
   --color-gray-400: hsl(180, 8%, 52%);
   --color-green-900: hsl(180, 14%, 20%);
 
-  --font-family: "League Spartan", sans-serif;
+  --font-lea: "League Spartan", sans-serif;
+  --background-image-mb: url("../public/sources/images/bg-header-mobile.svg");
+  --background-image-dk: url("../public/sources/images/bg-header-desktop.svg");
+}
+
+@layer components {
+  .card {
+    @apply bg-amber-300 font-bold text-black;
+  }
+  .bg-img {
+    @apply bg-mb md:bg-dk absolute  left-0 z-0 h-38 w-full bg-green-400 bg-cover bg-no-repeat;
+  }
+
+  .mg-x {
+    @apply mx-4;
+  }
+  .pd-x {
+    @apply px-4;
+  }
+  .tx-s {
+    @apply text-sm;
+  }
+  .shad {
+    @apply shadow-green-400/25 shadow-2xl;
+  }
+}
+
+body {
+  @apply bg-green-50 font-lea text-[15px];
 }
