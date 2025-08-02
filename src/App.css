@@ -13,29 +13,31 @@
 
 @layer components {
   .card {
-    @apply rounded bg-white shadow-2xl shadow-green-400/35;
-  }
-  .bg-img {
-    @apply bg-mb md:bg-dk absolute left-0 z-0 h-38 w-full bg-green-400 bg-cover bg-no-repeat;
+    @apply mx-4 rounded bg-white shadow-2xl shadow-green-400/35 md:mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl;
   }
 
-  .mg-x {
-    @apply mx-4;
+  .featured {
+    @apply before:absolute before:top-0 before:left-0 before:h-full before:w-1 before:rounded-l before:bg-green-400 xl:before:w-2;
+  }
+  .bg-img {
+    @apply bg-mb md:bg-dk absolute left-0 z-0 h-38 xl:h-52 w-full bg-green-400 bg-cover bg-no-repeat;
   }
   .pd-x {
-    @apply px-4;
+    @apply px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12;
   }
   .tx-s {
-    @apply text-sm;
+    @apply text-sm md:text-base lg:text-xl xl:text-2xl;
   }
+
+  /* 🐜 this for new and featured box */
   .box {
-    @apply w-fit rounded-2xl px-3 py-1 text-xs font-semibold text-white uppercase;
+    @apply w-fit rounded-2xl px-3 py-1 text-xs font-semibold text-white uppercase md:text-sm lg:text-base xl:px-4 xl:text-xl;
   }
   .point {
-    @apply h-1 w-1 rounded-full bg-gray-400;
+    @apply h-1 w-1 rounded-full bg-gray-400 xl:h-2 xl:w-2;
   }
   .word {
-    @apply bg-green-400/10 text-sm font-semibold text-green-400 capitalize;
+    @apply bg-green-400/10 text-sm font-semibold text-green-400 capitalize md:text-base lg:text-lg xl:text-xl 2xl:text-2xl;
   }
 }
 

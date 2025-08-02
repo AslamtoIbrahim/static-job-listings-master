@@ -3,11 +3,17 @@ import ItemCard from "./ItemCard";
 
 const Home = () => {
   return (
-    <div className="mg-x relative top-26">
-       <Filter />
-       <section className="mt-8 bg-white shad">
+    <div className="relative top-30 xl:top-32 2xl:top-40">
+      <Filter />
+      <section className="shad mt-8 space-y-10 lg:space-y-4 xl:space-y-6 2xl:mt-10">
         <ItemCard />
-       </section>
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+      </section>
     </div>
   );
 };
