@@ -1,6 +1,13 @@
-const ClearButton = () => {
+type ClearButtonProps = {
+  clearAllWords: () => void;
+};
+
+const ClearButton = ({ clearAllWords }: ClearButtonProps) => {
   return (
-    <button className="tx-s cursor-pointer font-semibold  text-gray-400 capitalize hover:text-green-400 hover:underline ">
+    <button
+      onClick={clearAllWords}
+      className="tx-s cursor-pointer font-semibold text-gray-400 capitalize hover:text-green-400 hover:underline"
+    >
       clear
     </button>
   );

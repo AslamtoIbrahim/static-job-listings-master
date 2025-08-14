@@ -1,19 +1,29 @@
-import ClearButton from "./ClearButton"
-import KeyWord from "./KeyWord"
+import { useState } from "react";
+import ClearButton from "./ClearButton";
+import KeyWord from "./KeyWord";
 
 const Filter = () => {
+  const [keys, setKeys] = useState(["frontend", "css", "javascript", "html"]);
+  const removeWordClick = (value: string) => {
+    setKeys(keys.filter((k) => k !== value));
+  };
+  const clearAllWordsClick = () => {
+    setKeys([]);
+  };
   return (
-    <div className="card pd-x py-4 lg:py-5 2xl:py-6 shad flex justify-between items-center gap-2 ">
-      <section className="w-full flex flex-wrap gap-3 lg:gap-4 2xl:gap-6">
-        <KeyWord text="frontend"/>
-        <KeyWord text="CSS"/>
-        <KeyWord text="JavaScript"/>
+    <>
+   {keys.length !== 0 && <div className="card pd-x shad flex items-center justify-between gap-2 py-4 ">
+      <section className="flex w-full flex-wrap gap-2 lg:gap-4 ">
+        {keys.map((k) => (
+          <KeyWord key={k} text={k} removeKeyword={removeWordClick} />
+        ))}
       </section>
       <section>
-        <ClearButton />
+        <ClearButton clearAllWords={clearAllWordsClick} />
       </section>
-    </div>
-  )
-}
+    </div>}
+    </>
+  );
+};
 
-export default Filter
+export default Filter;
