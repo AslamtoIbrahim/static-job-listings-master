@@ -1,9 +1,22 @@
+import { useContext } from "react";
+import { KeysContext } from "../store/KeysContext";
 
 type LanguageProps = {
-    text: string
-}
-const Language = ({text}: LanguageProps) => {
-  return <div className="word w-fit py-1 lg:py-2 lg:px-3 px-2 hover:bg-green-400 hover:text-white cursor-pointer rounded lg:text-base/4">{text}</div>;
+  text: string;
+};
+const Language = ({ text }: LanguageProps) => {
+  const context = useContext(KeysContext);
+  const addkey = () => {
+    context.addKey(text)
+  };
+  return (
+    <div
+      onClick={addkey}
+      className="word w-fit cursor-pointer rounded px-2 py-1 hover:bg-green-400 hover:text-white lg:px-3 lg:py-2 lg:text-base/4"
+    >
+      {text}
+    </div>
+  );
 };
 
 export default Language;
