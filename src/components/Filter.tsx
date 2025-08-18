@@ -9,8 +9,10 @@ const Filter = () => {
     context.removeKey(value);
   };
   const clearAllWordsClick = () => {
-    context.clearKeys()
+    context.clearKeys();
   };
+
+ 
   return (
     <>
       {context.keys.length !== 0 && (

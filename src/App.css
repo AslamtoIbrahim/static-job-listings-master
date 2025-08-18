@@ -9,11 +9,14 @@
   --font-spartan: "League Spartan", sans-serif;
   --background-image-mb: url("../public/sources/images/bg-header-mobile.svg");
   --background-image-dk: url("../public/sources/images/bg-header-desktop.svg");
+
+  --text-base: 0.9375rem;
 }
 
 @layer components {
   .card {
-    @apply mx-4 rounded bg-white shadow-2xl shadow-green-400/35 md:mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl;
+    @apply mx-4 rounded bg-white shadow-2xl shadow-green-400/35 md:mx-auto md:max-w-2xl 
+    lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl;
   }
 
   .featured {
@@ -34,8 +37,8 @@
   }
   /* 🐜 this for new and featured box */
   .box {
-    @apply w-fit rounded-2xl px-3 pt-2 pb-1 text-sm/3 lg:pb-2 font-semibold text-white uppercase 
-    lg:text-base/4 flex items-center ;
+    @apply w-fit rounded-2xl px-3 pt-2 pb-1 text-sm/3 lg:pb-1.5 font-semibold text-white uppercase 
+    lg:text-sm/4 flex items-center ;
   }
   .point {
     @apply h-1 w-1 rounded-full bg-gray-400 xl:h-2 xl:w-2;
@@ -47,4 +50,9 @@
 
 body {
   @apply font-spartan bg-green-50 text-[15px];
+}
+
+
+.l {
+  color: #ffcc00;
 }

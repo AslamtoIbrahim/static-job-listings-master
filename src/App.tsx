@@ -7,7 +7,7 @@ function App() {
   const value = useKeys();
   return (
     <div className="relative h-screen">
-      <div className="bg-img" />
+      <div className="bg-img " />
       <KeysContext value={value}>
         <Home />
       </KeysContext>
