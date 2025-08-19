@@ -10,7 +10,7 @@ const ItemCard = ({ job }: { job: Job }) => {
     <div
       className={`card pd-x relative py-5 md:flex md:items-start md:justify-between md:gap-4 lg:py-8 xl:gap-8 2xl:items-center 2xl:gap-0 ${job.featured && "featured"}`}
     >
-      <div className="lg:flex lg:items-center lg:gap-6">
+      <div className="lg:flex lg:items-center lg:gap-6 md:flex-1/2">
         <section className="absolute -top-5 size-11 lg:static lg:size-16 xl:size-20">
           <img
             className="rounded-full shadow-2xl shadow-green-900/35"
@@ -40,7 +40,7 @@ const ItemCard = ({ job }: { job: Job }) => {
         </section>
       </div>
       <hr className="my-4 text-gray-400/50 lg:hidden" />
-      <section className="flex flex-wrap items-center gap-3 md:mt-3 lg:mt-0 xl:gap-4">
+      <section className="flex flex-wrap items-center gap-3 md:mt-3 lg:mt-0 xl:gap-4 md:flex-1/2">
         <Skills text={job.role} />
         <Skills text={job.level} />
         {job.languages.map((l) => (

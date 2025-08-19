@@ -51,7 +51,7 @@ const Home = () => {
       <section className="flex w-full justify-center">
         <button
           disabled={isFetching || !hasNextPage}
-          className={`mb-8 cursor-pointer rounded-md bg-green-900 px-12 py-2 text-white hover:bg-gray-700 disabled:cursor-auto disabled:bg-green-400/65 disabled:text-gray-950/70
+          className={`mb-8 cursor-pointer rounded-md bg-green-900 px-12 py-2 text-white hover:bg-gray-700 disabled:cursor-auto disabled:bg-gray-400/50 disabled:opacity-80 disabled:text-black/80
             ${status === "pending"&& 'hidden'}`}
           onClick={() => fetchNextPage()}
         >

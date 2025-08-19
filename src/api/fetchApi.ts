@@ -19,8 +19,6 @@ export const fetchJobs = async ({
      
   );
   const nextPage = (pageParam as number) + 1;
-  console.log("🍄 res: ", res);
-  console.log("🌐 data: ", res.data);
   const data = res.data;
 
   return { jobs: data, nextPage };
