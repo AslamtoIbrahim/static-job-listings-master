@@ -2,7 +2,7 @@ import type { Job } from "../utils/types";
 import Featured from "./Featured";
 import Skills from "./Skills";
 import New from "./New";
-import placeHolder from "../../public/sources/images/myhome.svg";
+
 
 const ItemCard = ({ job }: { job: Job }) => {
 
@@ -16,7 +16,7 @@ const ItemCard = ({ job }: { job: Job }) => {
             className="rounded-full shadow-2xl shadow-green-900/35"
             src={job.logo}
             alt="company logo"
-            onError={(e) => (e.currentTarget.src = `${placeHolder}`)}
+            onError={(e) => (e.currentTarget.src = "/public/sources/images/myhome.svg")}
           />
         </section>
         <section className="mt-4 space-y-4 lg:mt-0">
