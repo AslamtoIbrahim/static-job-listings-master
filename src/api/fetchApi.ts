@@ -7,11 +7,12 @@ const LIMIT_ITEMS = 5;
 export const fetchJobs = async ({
   queryKey,
   pageParam = 0,
-}: QueryFunctionContext<[string, string]>): Promise<{
+}: QueryFunctionContext<[string, string[]]>): Promise<{
   jobs: Job[];
   nextPage: number;
 }> => {
-  const [, search] = queryKey;
+  const [, keys] = queryKey;
+  const search = keys.join('|')
   const res = await axios.get(
     `https://689f1d4d3fed484cf8791773.mockapi.io/api/v1/jobs`,
     {params:{search, page: pageParam, limit: LIMIT_ITEMS}}
@@ -25,12 +26,4 @@ export const fetchJobs = async ({
   return { jobs: data, nextPage };
 };
 
-// const nestData = (data: Job[]) => {
-//   const size = 5;
-//   const nestedArray = [];
-//   for (let i = 0; i < data.length; i += size) {
-//     nestedArray.push(data.slice(i, i + size));
-//   }
-
-//   return nestedArray;
-// };
+ 
