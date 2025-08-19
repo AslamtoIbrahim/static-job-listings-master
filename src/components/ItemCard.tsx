@@ -13,7 +13,7 @@ const ItemCard = ({ job }: { job: Job }) => {
       <div className="lg:flex lg:items-center lg:gap-6">
         <section className="absolute -top-5 size-11 lg:static lg:size-16 xl:size-20">
           <img
-            className="rounded-full"
+            className="rounded-full shadow-2xl shadow-green-900/35"
             src={job.logo}
             alt="company logo"
             onError={(e) => (e.currentTarget.src = `${placeHolder}`)}
