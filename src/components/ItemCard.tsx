@@ -16,7 +16,7 @@ const ItemCard = ({ job }: { job: Job }) => {
             className="rounded-full shadow-2xl shadow-green-900/35"
             src={job.logo}
             alt="company logo"
-            onError={(e) => (e.currentTarget.src = "/sources/images/myhome.svg")}
+            onError={(e) => (e.currentTarget.src = "/sources/images/placeholder.svg")}
           />
         </section>
         <section className="mt-4 space-y-4 lg:mt-0">

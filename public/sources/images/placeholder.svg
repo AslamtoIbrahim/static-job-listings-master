@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+  <!-- Circle background -->
+  <circle cx="44" cy="44" r="44" fill="hsl(180, 29%, 50%)"></circle>
+  
+  <!-- Camera body -->
+  <rect x="20" y="28" width="48" height="32" rx="6" fill="white" stroke="#ccc" stroke-width="1"></rect>
+  
+  <!-- Lens -->
+  <circle cx="44" cy="44" r="10" fill="#eee" stroke="#ccc" stroke-width="1"></circle>
+  <circle cx="44" cy="44" r="5" fill="white"></circle>
+  
+  <!-- Flash -->
+  <rect x="30" y="30" width="8" height="6" rx="1" fill="#ccc"></rect>
+</svg>
