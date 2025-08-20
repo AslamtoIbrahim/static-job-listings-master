@@ -1,12 +1,8 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
-import { useContext } from "react";
-import { fetchJobs } from "../api/fetchApi";
-import { KeysContext } from "../store/KeysContext";
+import { useInfiniteJobList } from "../hook/useInfiniteJobList";
 import Filter from "./Filter";
 import ItemCard from "./ItemCard";
 
 const Home = () => {
-  const context = useContext(KeysContext);
   const {
     data,
     fetchNextPage,
@@ -15,15 +11,7 @@ const Home = () => {
     isFetchingNextPage,
     status,
     error,
-  } = useInfiniteQuery({
-    queryKey: ["jobs", context.keys] as [string, string[]],
-    queryFn: fetchJobs,
-    initialPageParam: 1,
-    getNextPageParam: (lastPage) => {
-      const next = lastPage.nextPage;
-      return lastPage.jobs[next] ? next : undefined;
-    },
-  });
+  } = useInfiniteJobList()
 
   if (status === "error") {
     return (
