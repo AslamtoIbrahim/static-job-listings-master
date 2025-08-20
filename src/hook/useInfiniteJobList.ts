@@ -1,10 +1,9 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { use } from "react";
 import { fetchJobs } from "../api/fetchApi";
-import { KeysContext } from "../store/KeysContext";
+import { useKeysContext } from "./useKeysContext";
 
 export const useInfiniteJobList = () => {
-    const context = use(KeysContext)
+    const context = useKeysContext()
     return useInfiniteQuery({
     queryKey: ["jobs", context.keys] as [string, string[]],
     queryFn: fetchJobs,

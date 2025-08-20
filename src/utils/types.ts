@@ -13,3 +13,10 @@ export type Job = {
   languages: string[];
   tools: string[];
 };
+
+export type KeyContext = {
+    keys: string[];
+    addKey: (key: string) => void;
+    removeKey: (key: string) => void;
+    clearKeys: () => void;
+}

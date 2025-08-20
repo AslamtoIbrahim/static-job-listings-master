@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { KeysContext } from "../store/KeysContext";
+import { useKeysContext } from "../hook/useKeysContext";
 
 type LanguageProps = {
   text: string;
 };
 const Skills = ({ text }: LanguageProps) => {
-  const context = useContext(KeysContext);
+  const {addKey} = useKeysContext()
   const addkey = () => {
-    context.addKey(text)
+    addKey(text)
   };
   return (
     <div

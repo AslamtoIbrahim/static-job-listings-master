@@ -1,16 +1,15 @@
 import "./App.css";
 import Home from "./components/Home";
-import { useKeys } from "./hook/useKeys";
-import { KeysContext } from "./store/KeysContext";
+import KeysContextProvider from "./store/KeysContextProvider";
 
 function App() {
-  const value = useKeys();
   return (
     <div className="relative h-screen">
-      <div className="bg-img " />
-      <KeysContext value={value}>
+      <div className="bg-img" />
+      <KeysContextProvider>
         <Home />
-      </KeysContext>
+      </KeysContextProvider>
+     
     </div>
   );
 }

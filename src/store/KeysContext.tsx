@@ -1,8 +1,10 @@
 import { createContext } from "react";
+import type { KeyContext } from "../utils/types";
 
-export const KeysContext = createContext({
-    keys: [] as string [],
-    addKey: (_key: string) => {},
-    removeKey: (_key: string) => {},
-    clearKeys: () => {}
-})
+export const KeysContext = createContext<KeyContext | undefined>(undefined)
+
+
+ 
+
+
+ 
