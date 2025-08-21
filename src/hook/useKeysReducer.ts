@@ -7,8 +7,12 @@ type Action =
 
 const reducer = (keys: string[], action: Action) => {
   switch (action.type) {
-    case "ADD_KEY":
+    case "ADD_KEY": {
+      if (keys.includes(action.payload)) {
+        return keys;
+      }
       return [...new Set([action.payload, ...keys])];
+    }
     case "REMOVE_KEEY":
       return keys.filter((k) => k !== action.payload);
     case "CLEAR_KEY":
@@ -18,7 +22,7 @@ const reducer = (keys: string[], action: Action) => {
   }
 };
 
-export const useKeys = () => {
+export const useKeysReducer = () => {
   const [state, dispatch] = useReducer(reducer, []);
   const addKey = (key: string) => {
     dispatch({ type: "ADD_KEY", payload: key });
